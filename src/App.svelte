@@ -1,9 +1,12 @@
 <script>
-	export let name;
+let name = "Svetle"
 
-	function changeNameHandler() {
-		name = "Changed Name"
-	}
+$: upperName = name.toUpperCase();
+$: lowerName = name.toLowerCase();
+
+function changeName() {
+	name= 'New name'
+}
 </script>
 
 <style>
@@ -12,5 +15,9 @@
 	}
 </style>
 
-<h1>{name}!</h1>
-<button on:click={changeNameHandler}>Change Name</button>
+<h1>{name}</h1>
+<h2>{upperName}</h2>
+<h2>{lowerName}</h2>
+
+<button on:click={changeName}>Change Name</button>
+
