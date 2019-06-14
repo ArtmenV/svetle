@@ -7,6 +7,12 @@ $: lowerName = name.toLowerCase();
 function changeName() {
 	name= 'New name'
 }
+
+first: for (let i=0; i < 5; i++) {
+	if (i % 2 === 0) {
+	continue first;
+	}
+}
 </script>
 
 <style>
