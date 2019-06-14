@@ -1,5 +1,7 @@
 <script>
-let name = "Svetle"
+let name = "Svetle";
+
+let counter = 0;
 
 $: upperName = name.toUpperCase();
 $: lowerName = name.toLowerCase();
@@ -27,3 +29,6 @@ first: for (let i=0; i < 5; i++) {
 
 <button on:click={changeName}>Change Name</button>
 
+
+<h1>Counter {counter}</h1>
+<button on:click={() => counter++}>Add one to counter</button>
