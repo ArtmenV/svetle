@@ -3,6 +3,8 @@ let name = "Svetle";
 
 let counter = 0;
 
+$: counterClass = counter % 2 === 0 ? 'red' : 'blue'
+
 $: upperName = name.toUpperCase();
 $: lowerName = name.toLowerCase();
 
@@ -21,6 +23,12 @@ first: for (let i=0; i < 5; i++) {
 	h1 {
 		color: purple;
 	}
+	.blue {
+		color: blue
+	}
+	.red {
+		color: red;
+	}
 </style>
 
 <h1>{name}</h1>
@@ -30,5 +38,5 @@ first: for (let i=0; i < 5; i++) {
 <button on:click={changeName}>Change Name</button>
 
 
-<h1>Counter {counter}</h1>
+<h1 class={counterClass}>Counter {counter}</h1>
 <button on:click={() => counter++}>Add one to counter</button>
